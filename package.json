@@ -1,6 +1,11 @@
 {
-  "name": "centerfin",
+  "name": "centerfin-dashboard",
   "version": "0.1.0",
+  "title": "Centerfin Dashboard",
+  "author": {
+    "name": "Christian Mosley", 
+    "url": "https://www.cmosley.dev"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
