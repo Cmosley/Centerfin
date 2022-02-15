@@ -1,24 +1,27 @@
 import { Navigate } from "react-router-dom";
 
-import Login from '.src/pages/Login';
-import Signup from '.src/pages/Signup';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
-import StatusLayout from ".src/pages/StatusLayout";
-import statusRoutes from "./status";
+import Status from '../pages/Status';
+// import statusRoutes from "./status";
 
 const router = [
   {
-    path: "login",
+    path: '/login',
     element: <Login />
   },
   {
-    path: "signup",
+    path: 'signup',
     element: <Signup />
   },
   {
+    path: "dashboard", 
+    element: <Navigate to="/dashboard" />
+  },
+  {
     path: "*",
-    element: <StatusLayout />,
-    children: statusRoutes
+    element: <Status />,
   }
 ];
 

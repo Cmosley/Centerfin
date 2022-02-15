@@ -1,4 +1,11 @@
 import { Navigate } from 'react-router-dom';
+import Status from './status';
 
-const Status = ({ children }) => children;
+const statusRoutes = [
+  {
+    path: '*',
+    element: <Status />
+  }
+]
 
+export default statusRoutes;
