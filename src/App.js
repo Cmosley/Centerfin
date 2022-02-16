@@ -1,16 +1,16 @@
 import React from 'react';
 import { useRoutes } from "react-router-dom";
+
 import router from './router';
+import useAuth from '../src/hooks/useAuth';
+
 import "./App.css";
-
-// import useAuth from 'src/hooks/useAuth';
 import logo from "./logo.svg";
-// import { CssBaseline } from "@mui/material";
-
 
 function App() {
   // const auth = useAuth();
     const content = useRoutes(router);
+    const auth = useAuth();
   
     return (
       <>   
