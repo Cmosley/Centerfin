@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-centerfin-staging-223123-authRole",
+      "UnauthRoleArn": "arn:aws:iam::760667985110:role/amplify-centerfin-staging-223123-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::760667985110:role/amplify-centerfin-staging-223123-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-centerfin-staging-223123-deployment",
+      "UnauthRoleName": "amplify-centerfin-staging-223123-unauthRole",
+      "StackName": "amplify-centerfin-staging-223123",
+      "StackId": "arn:aws:cloudformation:us-east-2:760667985110:stack/amplify-centerfin-staging-223123/d712bf40-8de5-11ec-9e54-06530946b540",
+      "AmplifyAppId": "d3qxhb2ys9837v"
+    },
+    "categories": {
+      "auth": {
+        "Centerfin": {}
+      },
+      "storage": {
+        "centerfinc190d31d": {
+          "bucketName": "amplify-centerfin-staging-223123-deployment",
+          "region": "us-east-2"
+        }
+      }
+    }
+  }
+}

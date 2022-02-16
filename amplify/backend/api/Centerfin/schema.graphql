@@ -1,0 +1,6 @@
+type M1 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  portfolio_name: String
+  number_of_clients_subscribed: Int
+  symbols_in_portfolio: AWSJSON
+}

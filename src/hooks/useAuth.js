@@ -1,4 +1,4 @@
-import AuthContext from 'src/contexts/Amplify';
+import { AuthContext } from '../contexts/Amplify';
 import { useContext } from 'react';
 
 const useAuth = () => 
