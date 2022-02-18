@@ -4,34 +4,13 @@
 }
 
 .App-logo {
-  height: 15vmin;
+  height: 10vmin;
+  width: 35vmin;
   pointer-events: none;
   -webkit-animation: spin 7s linear infinite;
        animation: spin 7s linear infinite;
 }
 
-@-webkit-keyframes spin{
-  from {
-    -webkit-transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(-360deg);
-  }
-}
-
-@keyframes spin{
-  from {
-    -moz-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-  to {
-    -moz-transform: rotateY(-360deg);
-    -ms-transform: rotateY(-360deg);
-    transform: rotateY(-360deg);
-  }
-}
-  
 .App-header {
   background: url("https://uploads-ssl.webflow.com/5ed7e67a3493696d5430addd/61042837fb34228c3a94a5a3_hero-bg.jpg");
   background-repeat: no-repeat;
@@ -49,4 +28,39 @@
   color: #61dafb;
 }
 
+.amplify-button[data-variation='primary'] {
+  background: #000000;
+}
 
+.amplify-button[data-variation=link] {
+    color: white; 
+}
+
+.amplify-button[data-variation=link]:hover {
+    background-color: #36AE78;
+    color: white; 
+}
+
+.amplify-input  {
+  background: white;
+}
+
+.amplify-field-group__outer-end {
+  background: var(--amplify-colors-neutral-20)
+}
+
+[data-amplify-authenticator] {
+  --amplify-colors-background-primary: #42D794;
+  --amplify-colors-background-secondary: #36AE78;
+  --amplify-colors-background-tertiary: #000000;
+  --amplify-components-tabs-item-active-border-color: #000000;
+  --amplify-components-tabs-item-border-color: #36AE78;
+  --amplify-components-tabs-item-active-color: black;
+  --amplify-components-tabs-item-color: black;
+  --amplify-components-tabs-item-focus-color: black;
+  --amplify-components-text-color: black;
+}
+
+[data-amplify-form], [data-amplify-footer] {
+  background: #42D794;
+}
