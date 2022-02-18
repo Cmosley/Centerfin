@@ -4,34 +4,13 @@
 }
 
 .App-logo {
-  height: 15vmin;
+  height: 10vmin;
+  width: 35vmin;
   pointer-events: none;
   -webkit-animation: spin 7s linear infinite;
        animation: spin 7s linear infinite;
 }
 
-@-webkit-keyframes spin{
-  from {
-    -webkit-transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(-360deg);
-  }
-}
-
-@keyframes spin{
-  from {
-    -moz-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-  to {
-    -moz-transform: rotateY(-360deg);
-    -ms-transform: rotateY(-360deg);
-    transform: rotateY(-360deg);
-  }
-}
-  
 .App-header {
   background: url("https://uploads-ssl.webflow.com/5ed7e67a3493696d5430addd/61042837fb34228c3a94a5a3_hero-bg.jpg");
   background-repeat: no-repeat;
@@ -48,7 +27,6 @@
 .App-link {
   color: #61dafb;
 }
-
 
 .amplify-button[data-variation='primary'] {
   background: #000000;
