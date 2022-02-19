@@ -1,39 +1,29 @@
 import React from 'react';
-import { useRoutes } from "react-router-dom";
-
-import router from './router';
-// import useAuth from '../src/hooks/useAuth';
-import { Amplify } from 'aws-amplify'
-import Auth from '@aws-amplify/auth'
-import { Authenticator } from '@aws-amplify/ui-react'
+// import { useRoutes } from "react-router-dom";
+// import router from './router';
+import  Amplify from 'aws-amplify'
+import awsconfig from "./aws-exports";
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
-import { amplifyConfig } from "./awsconfig";
-
-
 import "./App.css";
 import logo from "./logo.svg";
 
-Amplify.configure(amplifyConfig)
+import Home from './pages/Home'
+import Dashboard from './layouts/Dashboard'
+
+Amplify.configure(awsconfig);
 
 function App() {
-    const content = useRoutes(router);
-
-    return (
-      <>
-        <main>
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <Authenticator>
-                {({ signOut, user }) => {}}
-              </Authenticator>
-            </header>
-            {content}
-          </div>
-        </main>
-        
-      </>
-    );
+    const { route } = useAuthenticator((context)=> [context.route])
+    return route === 'authenticated' ? <Dashboard /> :  <Home />          
 }
 
-export default (App);
+export default function AppWithProvider() {
+  return (
+    <Authenticator.Provider>
+      <App></App>
+    </Authenticator.Provider>
+  );
+}
+
+// export default (App);
