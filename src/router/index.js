@@ -12,7 +12,7 @@ const router = [
   },
   {
     path: "dashboard",
-    element: <Navigate to="dashboard" />,
+    element: <Navigate to="dashboard" replace />,
   },
   {
     path: "*",

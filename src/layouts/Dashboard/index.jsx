@@ -1,21 +1,17 @@
 import {Box} from '@mui/material'
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const { user, signOut } = useAuthenticator((context) => [context.user]);
+
 
   return (
     <>
-      <Box sx={{
-        position: 'relative', 
-        flex: 1,
-        display: 'flex', 
-        width: '100%',
-        height: '100%',
-      }}>
-        <h1>Dashboard</h1>
-
-      </Box>
+      <h1>Dashboard</h1>
+      <h2>Welcome, {user.username}!</h2>
+      <button onClick={signOut}>Sign Out</button>
     </>
-  )
+  );
 }
 
 export default Dashboard;
