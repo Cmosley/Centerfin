@@ -1,19 +1,15 @@
 import React from 'react';
 import { useRoutes } from "react-router-dom";
-
 import router from './router';
-// import useAuth from '../src/hooks/useAuth';
-import { Amplify } from 'aws-amplify'
-import Auth from '@aws-amplify/auth'
+import  Amplify from 'aws-amplify'
+import awsconfig from "./aws-exports";
 import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
-import { amplifyConfig } from "./awsconfig";
-
-
 import "./App.css";
 import logo from "./logo.svg";
 
-Amplify.configure(amplifyConfig)
+Amplify.configure(awsconfig);
+
 
 function App() {
     const content = useRoutes(router);
@@ -26,9 +22,9 @@ function App() {
               <img src={logo} className="App-logo" alt="logo" />
               <Authenticator>
                 {({ signOut, user }) => {}}
+                  {content}
               </Authenticator>
             </header>
-            {content}
           </div>
         </main>
         

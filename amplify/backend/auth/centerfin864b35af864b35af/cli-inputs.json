@@ -1,14 +1,14 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "centerfin01111614_identitypool_01111614",
+    "identityPoolName": "centerfin864b35af_identitypool_864b35af",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "center01111614",
-    "userPoolName": "centerfin01111614_userpool_01111614",
+    "resourceNameTruncated": "center864b35af",
+    "userPoolName": "centerfin864b35af_userpool_864b35af",
     "autoVerifiedAttributes": [
       "email"
     ],
-    "mfaConfiguration": "OFF",
+    "mfaConfiguration": "OPTIONAL",
     "mfaTypes": [
       "SMS Text Message"
     ],
@@ -31,16 +31,24 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "center01111614_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "center864b35af_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "01111614",
-    "resourceName": "centerfin01111614",
+    "sharedId": "864b35af",
+    "resourceName": "centerfin864b35af864b35af",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
     "usernameAttributes": [
       "email"
     ],
-    "userPoolGroupList": [],
+    "userPoolGroups": true,
+    "adminQueries": false,
+    "triggers": {},
+    "hostedUI": false,
+    "userPoolGroupList": [
+      "admin",
+      "employee"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
