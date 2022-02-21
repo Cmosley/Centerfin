@@ -6,8 +6,8 @@ import awsconfig from "./aws-exports";
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import "./App.css";
-import logo from "./logo.svg";
 
+import ThemeProvider from './theme/ThemeProvider'
 import Home from './pages/Home'
 import Dashboard from './layouts/Dashboard'
 
@@ -21,9 +21,10 @@ function App() {
 export default function AppWithProvider() {
   return (
     <Authenticator.Provider>
-      <App></App>
+      <ThemeProvider>
+        <App></App>
+      </ThemeProvider>
     </Authenticator.Provider>
   );
 }
 
-// export default (App);
