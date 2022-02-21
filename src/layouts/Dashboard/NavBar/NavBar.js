@@ -40,10 +40,9 @@ const NavBarImage = styled(Box)(
     background-size: cover;
     position: absolute;
     left: 0;
-    Nav: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    opacity: .7;
 `
 );
 
@@ -62,20 +61,21 @@ function NavBar() {
     <NavBarWrapper>
       <NavBarImage
         sx={{
-          opacity: 0.7,
+          opacity: 0.0,
           background: `${theme.colors.gradients.black1}`,
         }}
       />
       <NavBarImage
         sx={{
-          opacity: 0.5,
-          background: `${theme.colors.gradients.blue5}`,
+          opacity: 0.7,
+          background: `${theme.colors.gradients.green2}`,
         }}
       />
       <NavBarImage
         sx={{
-          opacity: 0.15,
-          backgroundImage: 'url("./public/static/background/beach-dark.png")',
+          opacity: 0.4,
+          backgroundImage:
+            'url("https://uploads-ssl.webflow.com/5ed7e67a3493696d5430addd/61004825399b2669626c80b9_footerBg.jpg")',
         }}
       />
       <Container
@@ -91,8 +91,7 @@ function NavBar() {
               sx={{
                 display: { xs: "none", md: "inline-flex" },
               }}
-            >
-            </Box>
+            ></Box>
           </Box>
           <Box display="flex">
             <Box
@@ -101,18 +100,14 @@ function NavBar() {
                 display: { xs: "none", sm: "inline-flex" },
               }}
             >
-              
-              <Box mx={1}>
-                
-              </Box>
+              <Box mx={1}></Box>
             </Box>
             <Box
               component="span"
               sx={{
                 display: { md: "none", xs: "inline-flex" },
               }}
-            >
-            </Box>
+            ></Box>
           </Box>
         </Box>
         <DividerWrapper
@@ -128,8 +123,7 @@ function NavBar() {
             width: "100%",
             display: { xs: "none", md: "inline-block" },
           }}
-        >
-        </Box>
+        ></Box>
       </Container>
     </NavBarWrapper>
   );

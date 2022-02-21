@@ -15,6 +15,8 @@ const themeColors = {
 
 const colors = {
   gradients: {
+    // green1: "linear-gradient(135deg, #42D794 0%, #36AE78 100%)",
+
     blue1: "linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)",
     blue2: "linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%)",
     blue3: "linear-gradient(127.55deg, #141E30 3.73%, #243B55 92.26%)",
