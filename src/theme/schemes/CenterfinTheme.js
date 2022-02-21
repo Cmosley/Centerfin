@@ -1,7 +1,6 @@
 import { alpha, createTheme, lighten, darken } from "@mui/material";
 import "@mui/lab/themeAugmentation";
 
-// import i18n from 'src/i18n/i18n';
 const themeColors = {
   primary: "#42D794",
   secondary: "#29855B",
