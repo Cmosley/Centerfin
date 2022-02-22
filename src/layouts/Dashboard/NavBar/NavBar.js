@@ -13,6 +13,8 @@ import {
   useTheme,
 } from "@mui/material";
 
+import logo from '../../../logo.svg'
+import Userbox from "../Userbox/Userbox";
 
 const NavBarWrapper = styled(Card)(
   ({ theme }) => `
@@ -59,21 +61,21 @@ function NavBar() {
 
   return (
     <NavBarWrapper>
-      <NavBarImage
+      {/* <NavBarImage
         sx={{
-          opacity: 0.0,
+          opacity: 0.1,
           background: `${theme.colors.gradients.black1}`,
         }}
-      />
+      /> */}
       <NavBarImage
         sx={{
-          opacity: 0.7,
-          background: `${theme.colors.gradients.green2}`,
+          opacity: 0.8,
+          background: `${theme.colors.gradients.green3}`,
         }}
       />
       <NavBarImage
         sx={{
-          opacity: 0.4,
+          opacity: 0.3,
           backgroundImage:
             'url("https://uploads-ssl.webflow.com/5ed7e67a3493696d5430addd/61004825399b2669626c80b9_footerBg.jpg")',
         }}
@@ -85,7 +87,8 @@ function NavBar() {
         maxWidth="xl"
       >
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Box display="flex">
+          <Box display="flex" marginLeft="5%">
+            <img src={logo} alt="fin-logo" width={"40%"} margin-left={"20px"} />
             <Box
               component="span"
               sx={{
@@ -93,7 +96,7 @@ function NavBar() {
               }}
             ></Box>
           </Box>
-          <Box display="flex">
+          <Box display="flex" marginRight="5%">
             <Box
               component="span"
               sx={{
@@ -102,12 +105,16 @@ function NavBar() {
             >
               <Box mx={1}></Box>
             </Box>
+            <Userbox />
             <Box
               component="span"
               sx={{
                 display: { md: "none", xs: "inline-flex" },
               }}
-            ></Box>
+            >
+              
+            </Box>
+            
           </Box>
         </Box>
         <DividerWrapper
@@ -116,6 +123,7 @@ function NavBar() {
             my: 4,
           }}
         />
+        
         <Box
           display="flex"
           alignItems="center"
@@ -123,7 +131,9 @@ function NavBar() {
             width: "100%",
             display: { xs: "none", md: "inline-block" },
           }}
-        ></Box>
+        >
+          
+        </Box>
       </Container>
     </NavBarWrapper>
   );

@@ -3,7 +3,7 @@ import "@mui/lab/themeAugmentation";
 
 const themeColors = {
   primary: "#42D794",
-  secondary: "#29855B",
+  secondary: "#36AE78",
   success: "#57CA22",
   warning: "#FFA319",
   error: "#FF1943",
@@ -15,8 +15,6 @@ const themeColors = {
 
 const colors = {
   gradients: {
-    // green1: "linear-gradient(135deg, #42D794 0%, #36AE78 100%)",
-
     blue1: "linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)",
     blue2: "linear-gradient(135deg, #ABDCFF 0%, #0396FF 100%)",
     blue3: "linear-gradient(127.55deg, #141E30 3.73%, #243B55 92.26%)",
@@ -31,6 +29,8 @@ const colors = {
     pink2: "linear-gradient(135deg, #F761A1 0%, #8C1BAB 100%)",
     green1: "linear-gradient(135deg, #FFF720 0%, #3CD500 100%)",
     green2: "linear-gradient(to bottom, #00b09b, #96c93d)",
+    green3: "linear-gradient(135deg, #42D794 0%, #36AE78 100%)",
+    green4: "linear-gradient(135deg, #42D794 0%, #29855B 100%)",
     black1: "linear-gradient(100.66deg, #434343 6.56%, #000000 93.57%)",
     black2: "linear-gradient(60deg, #29323c 0%, #485563 100%)",
   },
@@ -149,6 +149,8 @@ export const CenterfinTheme = createTheme({
       pink2: colors.gradients.pink2,
       green1: colors.gradients.green1,
       green2: colors.gradients.green2,
+      green3: colors.gradients.green3,
+      green4: colors.gradients.green4,
       black1: colors.gradients.black1,
       black2: colors.gradients.black2,
     },
