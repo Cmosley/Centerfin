@@ -1,15 +1,11 @@
-import { useContext } from "react";
 import {
   Box,
-  Drawer,
   alpha,
   Card,
   Container,
   styled,
-  useTheme,
 } from "@mui/material";
 
-import { useAuthenticator } from "@aws-amplify/ui-react";
 import NavBar from "./NavBar/NavBar";
 
 const MainWrapper = styled(Box)(
@@ -54,9 +50,12 @@ const CardWrapper = styled(Card)(
 );
 
 
+
 const Dashboard = (props) => {
-  const { user, signOut } = useAuthenticator((context) => [context.user]);
-  const theme = useTheme();
+
+  fetch()
+
+
 
   return (
     <>
@@ -65,12 +64,14 @@ const Dashboard = (props) => {
           <MainContent maxWidth="xl">
             <Box mx={8}>
               <CardWrapper>
+                <Box mx={4}>
+                  <h1>Sample Results</h1>
+                </Box>
               </CardWrapper>
             </Box>
           </MainContent>
       </MainWrapper>
     </>
-      // <button onClick={signOut}>Sign Out</button>
   );
 };
 
