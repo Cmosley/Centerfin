@@ -61,12 +61,6 @@ function NavBar() {
 
   return (
     <NavBarWrapper>
-      {/* <NavBarImage
-        sx={{
-          opacity: 0.1,
-          background: `${theme.colors.gradients.black1}`,
-        }}
-      /> */}
       <NavBarImage
         sx={{
           opacity: 0.8,
@@ -88,7 +82,7 @@ function NavBar() {
       >
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Box display="flex" marginLeft="5%">
-            <img src={logo} alt="fin-logo" width={"40%"} margin-left={"20px"} />
+            <img src={logo} alt="fin-logo" width={"55%"} margin-left={"20px"} />
             <Box
               component="span"
               sx={{
@@ -103,7 +97,7 @@ function NavBar() {
                 display: { xs: "none", sm: "inline-flex" },
               }}
             >
-              <Box mx={1}></Box>
+            {/* <Box mx={1}></Box> */}
             </Box>
             <Userbox />
             <Box
@@ -111,10 +105,8 @@ function NavBar() {
               sx={{
                 display: { md: "none", xs: "inline-flex" },
               }}
-            >
-              
+            > 
             </Box>
-            
           </Box>
         </Box>
         <DividerWrapper

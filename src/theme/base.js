@@ -1,6 +1,5 @@
 import { CenterfinTheme } from "./schemes/CenterfinTheme";
 
-
 const themeMap = {
   CenterfinTheme
 };
