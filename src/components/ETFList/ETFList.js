@@ -67,7 +67,7 @@ function  ETFList() {
         stops: [0, 100],
       },
     },
-    colors: [theme.colors.primary.main],
+    colors: [theme.colors.error.main],
     dataLabels: {
       enabled: false,
     },
@@ -76,7 +76,7 @@ function  ETFList() {
     },
     stroke: {
       show: true,
-      colors: [theme.colors.primary.main],
+      colors: [theme.colors.error.light],
       width: 3,
     },
     legend: {
@@ -162,17 +162,14 @@ function  ETFList() {
           >
             <Box display="flex" alignItems="center">
               <AvatarWrapper>
-                <img
-                  alt="BTC"
-                  src="/static/images/placeholders/logo/bitcoin.png"
-                />
+                <img alt="ARKG" src="/static/images/etf/ARKG.webp" />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
-                  Bitcoin
+                <Typography variant="h4" Wrap>
+                  ARK Genomic Revolution
                 </Typography>
                 <Typography variant="subtitle1" noWrap>
-                  BTC
+                  BATS: ARKG
                 </Typography>
               </Box>
             </Box>
@@ -191,10 +188,10 @@ function  ETFList() {
                   mb: 1,
                 }}
               >
-                $56,475.99
+                $44.23
               </Typography>
-              <Text color="success">
-                <b>+12.5%</b>
+              <Text color="error">
+                <b>-1.12%</b>
               </Text>
             </Box>
             <Box
@@ -204,7 +201,7 @@ function  ETFList() {
                 justifyContent: "flex-start",
               }}
             >
-              <Label color="success">+$500</Label>
+              <Label color="error">-$1.10</Label>
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -212,7 +209,7 @@ function  ETFList() {
                   pl: 1,
                 }}
               >
-                { "last 24h"}
+                {"last 24h"}
               </Typography>
             </Box>
           </Box>
@@ -237,17 +234,14 @@ function  ETFList() {
           >
             <Box display="flex" alignItems="center">
               <AvatarWrapper>
-                <img
-                  alt="ETH"
-                  src="/static/images/placeholders/logo/ethereum.png"
-                />
+                <img alt="DSU" src="/static/images/etf/DSU.png" />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
-                  Ethereum
+                <Typography variant="h4" Wrap>
+                  BlackRock Debt Strategies Fund, Inc.
                 </Typography>
                 <Typography variant="subtitle1" noWrap>
-                  ETH
+                  NYSE: DSU
                 </Typography>
               </Box>
             </Box>
@@ -266,10 +260,10 @@ function  ETFList() {
                   mb: 1,
                 }}
               >
-                $1,968.00
+                $10.48
               </Typography>
               <Text color="error">
-                <b>-3.24%</b>
+                <b>-2.51%</b>
               </Text>
             </Box>
             <Box
@@ -279,7 +273,7 @@ function  ETFList() {
                 justifyContent: "flex-start",
               }}
             >
-              <Label color="error">-$90</Label>
+              <Label color="error">-$0.27</Label>
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -287,7 +281,7 @@ function  ETFList() {
                   pl: 1,
                 }}
               >
-                { "last 24h"}
+                {"last 24h"}
               </Typography>
             </Box>
           </Box>
@@ -312,17 +306,14 @@ function  ETFList() {
           >
             <Box display="flex" alignItems="center">
               <AvatarWrapper>
-                <img
-                  alt="ADA"
-                  src="/static/images/placeholders/logo/cardano.png"
-                />
+                <img alt="DSU" src="/static/images/etf/DSU.png" />
               </AvatarWrapper>
               <Box>
-                <Typography variant="h4" noWrap>
-                  Cardano
+                <Typography variant="h4" Wrap>
+                  BlackRock Floating Rate Income SFI
                 </Typography>
                 <Typography variant="subtitle1" noWrap>
-                  ADA
+                  NYSE: FRA
                 </Typography>
               </Box>
             </Box>
@@ -341,10 +332,10 @@ function  ETFList() {
                   mb: 1,
                 }}
               >
-                $23.00
+                $13.4
               </Typography>
               <Text color="error">
-                <b>-0.33%</b>
+                <b>-1.80%</b>
               </Text>
             </Box>
             <Box
@@ -354,7 +345,7 @@ function  ETFList() {
                 justifyContent: "flex-start",
               }}
             >
-              <Label color="error">-$5</Label>
+              <Label color="error">-$0.24</Label>
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -362,7 +353,7 @@ function  ETFList() {
                   pl: 1,
                 }}
               >
-                { "last 24h"}
+                {"last 24h"}
               </Typography>
             </Box>
           </Box>

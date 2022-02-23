@@ -9,6 +9,8 @@ import {
 import { useState } from "react";
 import NavBar from "./NavBar/NavBar";
 import PageHeader from "../../components/PageHeader/PageHeader"
+import ETFList from "../../components/ETFList/ETFList";
+
 import { Grid } from "@mui/material";
 
 import Portfolio from "../../pages/Portfolio";
@@ -108,8 +110,12 @@ const Dashboard = (props) => {
                 <Grid item lg={7} md={6} xs={12}>
                   <ETF />
                 </Grid>
-                <Grid item lg={5} md={6} xs={12}></Grid>
-                <Grid item xs={12}></Grid>
+                <Grid item lg={5} md={6} xs={12}>
+                  <ETF />
+                </Grid>
+                <Grid item xs={12}>
+                  <ETFList />
+                </Grid>
                 <Grid item xs={12}></Grid>
                 <Grid item md={6} lg={5} xs={12}></Grid>
                 <Grid item md={6} lg={7} xs={12}></Grid>
