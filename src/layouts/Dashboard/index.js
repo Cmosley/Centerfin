@@ -6,7 +6,11 @@ import {
   styled,
 } from "@mui/material";
 
+import { useState } from "react";
 import NavBar from "./NavBar/NavBar";
+// import { twelveDataConfig } from "../../config";
+
+
 
 const MainWrapper = styled(Box)(
   ({ theme }) => `
@@ -49,11 +53,40 @@ const CardWrapper = styled(Card)(
 `
 );
 
+// console.log(twelveDataConfig)
+const apiKey = process.env.REACT_APP_TWELVE_DATA_API_KEY;
+const testNum = process.env.REACT_APP_TEST_NUM;
+
+
+const portfolio = ['ADISK', 'ARKG', 'DSU', 'FRA', 'BHK', 'QQQ', 'SMH', 'IGV', 'XBI', 'XLV', 'XLF', 'XLI', 'ICLN', 'IYT', 'XLB', 'IEMG', 'IEFA', 'EUFN', 'VYM', 'MUB', 'MBB', 'IEF', 'TIP', 'LQD', 'KBWB', 'VNQ', 'GLD', 'SLV', 'FCX', 'GBTC', 'CASHX']
 
 
 const Dashboard = (props) => {
+  const [etfData, setEtfData] = useState()
 
-  fetch()
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        `https://api.twelvedata.com/eod?symbol=${portfolio}&apikey=${apiKey}`
+        );
+      const data = await response.json()
+      setEtfData(data)
+      console.log(data);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  
+
+  // const fetchAPI = () => {
+  //   fetch(`https://api.twelvedata.com/etf?${apiKey}`)
+  //   .then(res => {res.json()})
+  //   .then(data => console.log(data))
+  //   .catch(error => console.log('ERROR'))
+  // }
+  // fetchAPI()
+
 
 
 
@@ -66,6 +99,12 @@ const Dashboard = (props) => {
               <CardWrapper>
                 <Box mx={4}>
                   <h1>Sample Results</h1>
+                  <button onClick={fetchData}>Get Data</button>
+                    <ul>
+                    {etfData !== undefined ?
+                      etfData.symbol
+                    : null }
+                    </ul>
                 </Box>
               </CardWrapper>
             </Box>
