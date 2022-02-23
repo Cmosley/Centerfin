@@ -1,17 +1,10 @@
-import Footer from "src/components/Footer";
-import PageTitleWrapper from "src/components/PageTitleWrapper";
-import { Helmet } from "react-helmet-async";
+// import Footer from "src/components/Footer";
 import { Grid } from "@mui/material";
 
-import PageHeader from "./PageHeader";
-import Block1 from "./Block1";
-import Block2 from "./Block2";
-import Block3 from "./Block3";
-import Block4 from "./Block4";
-import Block5 from "./Block5";
-import Block6 from "./Block6";
+import Daily from "../components/SmallCharts/Daily";
 
-function DataDisplayChartsSmall() {
+
+function Portfolio() {
   return (
     <>
       <Grid
@@ -25,9 +18,9 @@ function DataDisplayChartsSmall() {
         spacing={4}
       >
         <Grid item xs={12}>
-          <Block1 />
+          <Daily />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Block2 />
         </Grid>
         <Grid item xs={12}>
@@ -41,11 +34,11 @@ function DataDisplayChartsSmall() {
         </Grid>
         <Grid item xs={12}>
           <Block6 />
-        </Grid>
+        </Grid> */}
       </Grid>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
 
-export default DataDisplayChartsSmall;
+export default Portfolio;

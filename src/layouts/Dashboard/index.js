@@ -9,6 +9,10 @@ import {
 import { useState } from "react";
 import NavBar from "./NavBar/NavBar";
 import PageHeader from "../../components/PageHeader/PageHeader"
+import { Grid } from "@mui/material";
+
+import Portfolio from "../../pages/Portfolio";
+import ETF from "../../pages/ETF"
 // import { twelveDataConfig } from "../../config";
 
 
@@ -85,21 +89,38 @@ const Dashboard = (props) => {
     <>
       <MainWrapper>
         <NavBar />
-          <MainContent maxWidth="xl">
-            <Box mx={8}>
-              <CardWrapper>
-                <PageHeader></PageHeader>
-                <Box mx={4}>
-                  {/* <button onClick={fetchData}>Get Data</button> */}
-                    <ul>
-                    {etfData !== undefined ?
-                      etfData.symbol
-                    : null }
-                    </ul>
-                </Box>
-              </CardWrapper>
-            </Box>
-          </MainContent>
+        <MainContent maxWidth="xl">
+          <Box mx={8}>
+            <CardWrapper>
+              <PageHeader></PageHeader>
+              <Portfolio />
+              <Grid
+                sx={{
+                  mt: 2,
+                  px: 4,
+                }}
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="stretch"
+                spacing={4}
+              >
+                <Grid item lg={7} md={6} xs={12}>
+                  <ETF />
+                </Grid>
+                <Grid item lg={5} md={6} xs={12}></Grid>
+                <Grid item xs={12}></Grid>
+                <Grid item xs={12}></Grid>
+                <Grid item md={6} lg={5} xs={12}></Grid>
+                <Grid item md={6} lg={7} xs={12}></Grid>
+              </Grid>
+              <Box mx={4}>
+                {/* <button onClick={fetchData}>Get Data</button> */}
+                <ul>{etfData !== undefined ? etfData.symbol : null}</ul>
+              </Box>
+            </CardWrapper>
+          </Box>
+        </MainContent>
       </MainWrapper>
     </>
   );

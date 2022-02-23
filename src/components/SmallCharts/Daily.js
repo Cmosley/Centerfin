@@ -7,7 +7,7 @@ import {
   IconButton,
   useTheme,
 } from "@mui/material";
-import Text from "src/components/Text";
+import Text from "../Text";
 
 import MoreVertTwoToneIcon from "@mui/icons-material/MoreVertTwoTone";
 import Chart from "react-apexcharts";
@@ -16,7 +16,7 @@ import FiberManualRecordTwoToneIcon from "@mui/icons-material/FiberManualRecordT
 import ArrowUpwardTwoToneIcon from "@mui/icons-material/ArrowUpwardTwoTone";
 import KeyboardArrowDownTwoToneIcon from "@mui/icons-material/KeyboardArrowDownTwoTone";
 
-function Block1() {
+function Daily() {
   const theme = useTheme();
 
   const Box1Options = {
@@ -242,7 +242,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={t("Monthly sales")}
+            title={"Daily Return"}
           />
           <CardContent
             sx={{
@@ -294,7 +294,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={t("Last 10 orders")}
+            title={"Weekly Return"}
           />
           <CardContent
             sx={{
@@ -346,7 +346,7 @@ function Block1() {
                 <MoreVertTwoToneIcon />
               </IconButton>
             }
-            title={`2021 ${t("Total sales")}`}
+            title={`Monthly Return`}
           />
           <CardContent
             sx={{
@@ -382,4 +382,4 @@ function Block1() {
   );
 }
 
-export default Block1;
+export default Daily;
