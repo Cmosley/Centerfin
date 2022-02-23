@@ -10,6 +10,7 @@ import { useState } from "react";
 import NavBar from "./NavBar/NavBar";
 import PageHeader from "../../components/PageHeader/PageHeader"
 import ETFList from "../../components/ETFList/ETFList";
+import RegionETF from "../../components/RegionETF/RegionETF";
 
 import { Grid } from "@mui/material";
 
@@ -111,7 +112,7 @@ const Dashboard = (props) => {
                   <ETF />
                 </Grid>
                 <Grid item lg={5} md={6} xs={12}>
-                  <ETF />
+                  <RegionETF />
                 </Grid>
                 <Grid item xs={12}>
                   <ETFList />
