@@ -1,6 +1,10 @@
 const mysql = require('mysql');
 
 const password = formatEnvVariable(process.env.REACT_APP_DB_PASS);
+const host = formatEnvVariable(process.env.REACT_APP_DB_HOST);
+const db_user = formatEnvVariable(process.env.REACT_APP_DB_USER);
+const db_port = formatEnvVariable(process.env.REACT_APP_DB_PORT);
+
 
 function formatEnvVariable(env) {
   env = "'" + env + "'";
@@ -8,9 +12,9 @@ function formatEnvVariable(env) {
 } 
 
 const db = mysql.createConnection({
-  host: 'centerfin-test-1.cvvbqxqsgibo.us-east-1.rds.amazonaws.com',
-  port: '3306',
-  user: 'admin',
+  host: host,
+  port: db_port,
+  user: db_user,
   password: password,
   //database: 'centerfin-test-1',
 })
