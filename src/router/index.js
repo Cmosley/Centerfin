@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import Dashboard from "../layouts/Dashboard/"
 import Home from "../pages/Home";
 import Status from '../pages/Status';
@@ -9,18 +8,17 @@ const router = [
   {
     path: "/",
     element: <Home />,
-    children: [
-      {
-        path: 'dashboard',
-        element: <Navigate to={<Dashboard/>} />,
-        children: dashboardsRoutes,
-      },
-      {
-        path: "*",
-        element: <Status />,
-      },
-    ]
-  }
+  },
+  {
+    path: 'dashboard',
+    element: <Dashboard/> ,
+    children: dashboardsRoutes,
+  },
+  {
+    path: "*",
+    element: <Status />,
+  },
+  
 ];
 
 export default router;

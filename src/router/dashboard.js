@@ -13,16 +13,16 @@ const SuspenseLoader = (Component) => (props) =>
 // Dashboards
 
 const Clients = SuspenseLoader(
-  lazy(() => import("src/pages/Clients")));
+  lazy(() => import("../pages/Clients")));
 const Analyzer = SuspenseLoader(
-  lazy(() => import("src/pages/Analytics")));
-const Portfolio = SuspenseLoader(
-  lazy(() => import("src/pages/Portfolio")));
+  lazy(() => import("../pages/Analyzer")));
+const Portfolios = SuspenseLoader(
+  lazy(() => import("../pages/Portfolios")));
 
 
 const dashboardsRoutes = [
   {
-    path: "/",
+    path: "dashboards",
     element: <Navigate to="clients" replace />,
   },
   {
@@ -34,8 +34,8 @@ const dashboardsRoutes = [
     element: <Analyzer />,
   },
   {
-    path: "portfolio", 
-    element: <Portfolio />,
+    path: "portfolios", 
+    element: <Portfolios />,
   }
 ];
 

@@ -16,13 +16,13 @@ Amplify.configure(awsconfig);
 
 
 function App() {
+  // 'content' is using the 'router' for app navigation
+  const content = useRoutes(router);
+  // 'route' is used to access auth state of authenticator
+  //  https://ui.docs.amplify.aws/components/authenticator#access-auth-state
+  const { route } = useAuthenticator((context) => [context.user]);
 
-    const content = useRoutes(router);
-
-    const { route } = useAuthenticator((context) => [context.user]);
-    return route === 'authenticated' ? 
-      content
-        :  <Home />          
+  return route === "authenticated" ? content : <Home />;
 }
 
 export default function AppWithProvider() {

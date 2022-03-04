@@ -1,9 +1,6 @@
-import { Navigate } from 'react-router-dom';
-import Status from './status';
-
+import Status from '../pages/Status.jsx';
 
 const statusRoutes = [
-  
   {
     path: '*',
     element: <Status />
