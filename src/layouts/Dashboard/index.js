@@ -5,20 +5,9 @@ import {
   Container,
   styled,
 } from "@mui/material";
-
-// import { useState } from "react";
 import { Outlet } from "react-router-dom";
-
 import NavBar from "./NavBar/NavBar";
 import PageHeader from "../../components/PageHeader/PageHeader"
-import ETFList from "../../components/ETFList/ETFList";
-import RegionETF from "../../components/RegionETF/RegionETF";
-
-import { Grid } from "@mui/material";
-
-// import Portfolio from "../../pages/Portfolio";
-import ETF from "../../pages/ETF"
-// import { twelveDataConfig } from "../../config";
 
 
 const MainWrapper = styled(Box)(
@@ -68,15 +57,14 @@ const Dashboard = (props) => {
     <>
       <MainWrapper>
         <NavBar />
-        <MainContent maxWidth="xl">
-          <Box mx={8}>
-            <CardWrapper>
-              <PageHeader></PageHeader>
-              <Outlet />
-              
-            </CardWrapper>
-          </Box>
-        </MainContent>
+          <MainContent maxWidth="xl">
+            <Box mx={8}>
+              <CardWrapper>
+                <PageHeader></PageHeader>
+                <Outlet />
+              </CardWrapper>
+            </Box>
+          </MainContent>
       </MainWrapper>
     </>
   );

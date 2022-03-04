@@ -8,6 +8,8 @@ import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import "./App.css";
 
+import { CssBaseline } from "@mui/material";
+
 import ThemeProvider from './theme/ThemeProvider'
 import Home from './pages/Home'
 // import Dashboard from './layouts/Dashboard'
@@ -29,6 +31,7 @@ export default function AppWithProvider() {
   return (
     <Authenticator.Provider>
       <ThemeProvider>
+        <CssBaseline />
         <App></App>
       </ThemeProvider>
     </Authenticator.Provider>
