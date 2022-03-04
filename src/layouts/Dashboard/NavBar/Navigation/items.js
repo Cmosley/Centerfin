@@ -15,11 +15,6 @@ const menuItems = [
         link: "/clients",
       },
       {
-        name: "Dashboards",
-        icon: DashboardTwoToneIcon,
-        link: "/dashboards",
-      },
-      {
         name: "Portfolios",
         icon: AnalyticsTwoToneIcon,
         link: "/portfolios",

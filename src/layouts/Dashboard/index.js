@@ -14,7 +14,7 @@ import RegionETF from "../../components/RegionETF/RegionETF";
 
 import { Grid } from "@mui/material";
 
-import Portfolio from "../../pages/Portfolio";
+// import Portfolio from "../../pages/Portfolio";
 import ETF from "../../pages/ETF"
 // import { twelveDataConfig } from "../../config";
 
@@ -72,21 +72,6 @@ const portfolio = ['ADISK', 'ARKG', 'DSU', 'FRA', 'BHK',]
 
 
 const Dashboard = (props) => {
-  const [etfData, setEtfData] = useState()
-
-  // async function fetchData() {
-  //   try {
-  //     const response = await fetch(
-  //       `https://api.twelvedata.com/eod?symbol=${portfolio}&apikey=${apiKey}`
-  //       );
-  //     const data = await response.json()
-  //     setEtfData(data)
-  //     console.log(data);
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
   
   return (
     <>
@@ -96,7 +81,7 @@ const Dashboard = (props) => {
           <Box mx={8}>
             <CardWrapper>
               <PageHeader></PageHeader>
-              <Portfolio />
+              {/* <Outlet /> */}
               <Grid
                 sx={{
                   mt: 2,
@@ -123,7 +108,7 @@ const Dashboard = (props) => {
               </Grid>
               <Box mx={4}>
                 {/* <button onClick={fetchData}>Get Data</button> */}
-                <ul>{etfData !== undefined ? etfData.symbol : null}</ul>
+                {/* <ul>{etfData !== undefined ? etfData.symbol : null}</ul> */}
               </Box>
             </CardWrapper>
           </Box>
