@@ -1,10 +1,10 @@
 import AnalyticsTwoToneIcon from "@mui/icons-material/AnalyticsTwoTone";
-import HealthAndSafetyTwoToneIcon from "@mui/icons-material/HealthAndSafetyTwoTone";
+// import HealthAndSafetyTwoToneIcon from "@mui/icons-material/HealthAndSafetyTwoTone";
 import AccountTreeTwoToneIcon from "@mui/icons-material/AccountTreeTwoTone";
 import BackupTableTwoToneIcon from "@mui/icons-material/BackupTableTwoTone";
-import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";const 
+import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
 
-menuItems = [
+const menuItems = [
   {
     heading: "",
     items: [
@@ -18,12 +18,6 @@ menuItems = [
         name: "Dashboards",
         icon: DashboardTwoToneIcon,
         link: "/dashboards",
-      },
-      {
-        name: "Data Display",
-        icon: HealthAndSafetyTwoToneIcon,
-        badge: "",
-        link: "/top-navigation/blocks",
       },
       {
         name: "Portfolios",
