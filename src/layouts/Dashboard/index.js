@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
-import PageHeader from "../../components/PageHeader/PageHeader"
+import PageHeader from "../../pages/Portfolios/PageHeader"
 
 
 const MainWrapper = styled(Box)(
@@ -60,7 +60,7 @@ const Dashboard = (props) => {
           <MainContent maxWidth="xl">
             <Box mx={8}>
               <CardWrapper>
-                <PageHeader></PageHeader>
+                
                 <Outlet />
               </CardWrapper>
             </Box>

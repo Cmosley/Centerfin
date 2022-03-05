@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-
+import PageHeader from "./PageHeader";
 
 function Clients() {
   return (
@@ -14,7 +14,7 @@ function Clients() {
         alignItems="stretch"
         spacing={4}
       >
-      <h1>Clients</h1>
+      <PageHeader />
       </Grid>
       {/* <Footer /> */}
     </>

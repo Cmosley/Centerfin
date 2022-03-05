@@ -118,11 +118,12 @@ function NavBar() {
         />
         
         <Box
-          justifyContent='center'
+          justifyContent='start'
           color='white'
           sx={{
             width: "100%",
             display: { xs: "flex", md: "flex", xl: 'flex' },
+            
           }}
 
         >

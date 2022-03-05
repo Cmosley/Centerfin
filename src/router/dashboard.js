@@ -13,11 +13,11 @@ const SuspenseLoader = (Component) => (props) =>
 // Dashboards
 
 const Clients = SuspenseLoader(
-  lazy(() => import("../pages/Clients")));
+  lazy(() => import("../pages/Clients/PageHeader")));
 const Analyzer = SuspenseLoader(
-  lazy(() => import("../pages/Analyzer")));
+  lazy(() => import("../pages/Analyzer/")));
 const Portfolios = SuspenseLoader(
-  lazy(() => import("../pages/Portfolios")));
+  lazy(() => import("../pages/Portfolios/")));
 
 
 const dashboardsRoutes = [

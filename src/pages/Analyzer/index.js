@@ -1,9 +1,10 @@
 import { Grid } from "@mui/material";
-
+import PageHeader from "./PageHeader";
 
 function Analyzer() {
   return (
     <>
+      <PageHeader/>
       <Grid
         sx={{
           px: 4,
@@ -14,7 +15,7 @@ function Analyzer() {
         alignItems="stretch"
         spacing={4}
       >
-        <h1>Analyzer</h1>
+        
         
       </Grid>
       {/* <Footer /> */}

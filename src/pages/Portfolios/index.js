@@ -1,14 +1,15 @@
 // import Footer from "src/components/Footer";
 import { Grid } from "@mui/material";
-
-import ETFList from "../components/ETFList/ETFList";
-import RegionETF from "../components/RegionETF/RegionETF";
-import ETF from "../pages/ETF"
-import ShortTerm from "../components/SmallCharts/ShortTerm"
+import PageHeader from "./PageHeader";
+import ETFList from "../../components/ETFList/ETFList";
+import RegionETF from "../../components/RegionETF/RegionETF";
+import ETF from "../ETF"
+import ShortTerm from "../../components/SmallCharts/ShortTerm"
 
 function Portfolios() {
   return (
     <>
+      <PageHeader />
       <Grid
         sx={{
           mt: 2,

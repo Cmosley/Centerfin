@@ -1,15 +1,7 @@
 .App {
   text-align: center;
-  
 }
 
-.App-logo {
-  height: 10vmin;
-  width: 35vmin;
-  pointer-events: none;
-  -webkit-animation: spin 7s linear infinite;
-       animation: spin 7s linear infinite;
-}
 
 .App-header {
   background: url("https://uploads-ssl.webflow.com/5ed7e67a3493696d5430addd/61042837fb34228c3a94a5a3_hero-bg.jpg");

@@ -10,7 +10,7 @@ import {
   useTheme,
   Card,
 } from "@mui/material";
-import PageTitleWrapper from "../PageTitleWrapper/PageTitleWrapper";
+import PageTitleWrapper from "../../components/PageTitleWrapper/PageTitleWrapper";
 import StackedBarChartTwoToneIcon from "@mui/icons-material/StackedBarChartTwoTone";
 
 const AvatarPageTitle = styled(Avatar)(
