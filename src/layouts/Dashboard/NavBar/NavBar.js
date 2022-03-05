@@ -15,6 +15,7 @@ import {
 
 import logo from '../../../logo.svg'
 import Userbox from "../Userbox/Userbox";
+import Navigation from "./Navigation"
 
 const NavBarWrapper = styled(Card)(
   ({ theme }) => `
@@ -117,13 +118,15 @@ function NavBar() {
         />
         
         <Box
-          display="flex"
-          alignItems="center"
+          justifyContent='center'
+          color='white'
           sx={{
             width: "100%",
-            display: { xs: "none", md: "inline-block" },
+            display: { xs: "flex", md: "flex", xl: 'flex' },
           }}
+
         >
+        <Navigation />
           
         </Box>
       </Container>
