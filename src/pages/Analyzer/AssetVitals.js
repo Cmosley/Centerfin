@@ -259,33 +259,12 @@ function AssetVitals() {
       />
       <CardContent>
         {currentTab === tabs[0].value && (
-          <Box
-            sx={{
-              textAlign: "center",
-            }}
-          >
-            <EmptyResultsWrapper src="/static/logo/logo.svg" />
-            <Typography
-              align="center"
-              variant="h4"
-              fontWeight="normal"
-              color="text.secondary"
-              sx={{
-                mt: 3,
-              }}
-              gutterBottom
-            >
-              There is no data for <b>{tabs[0].label}</b> !
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                my: 3,
-              }}
-            >
-              {"Generate Chart"}
-            </Button>
-          </Box>
+          <Chart
+            options={chartOptions}
+            series={chartData}
+            type="line"
+            height={306}
+          />
         )}
         {currentTab === tabs[1].value && (
           <Chart
@@ -295,49 +274,21 @@ function AssetVitals() {
             height={306}
           />
         )}
-        {currentTab === "organic" && (
-          <Box
-            sx={{
-              textAlign: "center",
-            }}
-          >
-            <EmptyResultsWrapper src="/static/logo/logo.svg" />
-
-            <Typography
-              align="center"
-              variant="h4"
-              fontWeight="normal"
-              color="text.secondary"
-              sx={{
-                mt: 3,
-              }}
-              gutterBottom
-            >
-              There is no data for <b>{tabs[1].label}</b>
-            </Typography>
-          </Box>
+        {currentTab === tabs[2].value && (
+          <Chart
+            options={chartOptions}
+            series={chartData}
+            type="line"
+            height={306}
+          />
         )}
         {currentTab === tabs[3].value && (
-          <Box
-            sx={{
-              textAlign: "center",
-            }}
-          >
-            <EmptyResultsWrapper src="/static/logo/logo.svg" />
-
-            <Typography
-              align="center"
-              variant="h4"
-              fontWeight="normal"
-              color="text.secondary"
-              sx={{
-                mt: 3,
-              }}
-              gutterBottom
-            >
-              There is no data for <b>{tabs[3].label}</b> !
-            </Typography>
-          </Box>
+          <Chart
+            options={chartOptions}
+            series={chartData}
+            type="line"
+            height={306}
+          />
         )}
       </CardContent>
       <Divider />
