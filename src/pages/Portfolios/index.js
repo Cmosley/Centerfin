@@ -1,7 +1,6 @@
 // import Footer from "src/components/Footer";
 import { Grid } from "@mui/material";
 import PageHeader from "./PageHeader";
-import ETFList from "../../components/ETFList/ETFList";
 import RegionETF from "../../components/RegionETF/RegionETF";
 import ETF from "../ETF"
 import ShortTerm from "../../components/SmallCharts/ShortTerm"
@@ -31,7 +30,6 @@ function Portfolios() {
           <RegionETF />
         </Grid>
         <Grid item xs={12}>
-          <ETFList />
         </Grid>
         <Grid item xs={12}></Grid>
         <Grid item md={6} lg={5} xs={12}></Grid>

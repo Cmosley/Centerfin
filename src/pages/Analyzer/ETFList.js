@@ -8,8 +8,8 @@ import {
   useTheme,
   styled,
 } from "@mui/material";
-import Label from "../Label";
-import Text from "../Text";
+import Label from "../../components/Label/";
+import Text from "../../components/Text/";
 import Chart from "react-apexcharts";
 
 const AvatarWrapper = styled(Avatar)(

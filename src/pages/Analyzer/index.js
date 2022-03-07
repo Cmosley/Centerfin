@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import PageHeader from "./PageHeader";
+import ETFList from "./ETFList"
 
 function Analyzer() {
   return (
@@ -15,7 +16,7 @@ function Analyzer() {
         alignItems="stretch"
         spacing={4}
       >
-        
+      <ETFList />
         
       </Grid>
       {/* <Footer /> */}

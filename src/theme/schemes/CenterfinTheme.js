@@ -384,7 +384,7 @@ export const CenterfinTheme = createTheme({
         "#nprogress": {
           pointerEvents: "none",
         },
-        "#nprogress .bar": {
+        "# .bar": {
           background: colors.primary.lighter,
         },
         "#nprogress .spinner-icon": {
