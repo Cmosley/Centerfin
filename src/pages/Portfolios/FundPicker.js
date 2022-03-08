@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import {
   Autocomplete,
   Box,
@@ -11,19 +11,45 @@ import {
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 
 
-const FundPicker = ( funds ) => {
+function FundPicker()  {
   const [fundQuery, setFundQuery] = useState([]);
   const [compareQuery, setCompareQuery] = useState([]);
   const [benchmarkQuery, setBenchmarkQuery] = useState([]);
 
-  const projectTags = [
-    { title: "Development" },
-    { title: "Design Project" },
-    { title: "Marketing Research" },
-    { title: "Software" },
+  const funds = [
+    { name: "ADISK" },
+    { name: "ARKG" },
+    { name: "DSU" },
+    { name: "FRA" },
+    { name: "BHK" },
+    { name: "QQQ" },
+    { name: "SMH" },
+    { name: "IGV" },
+    { name: "XBI" },
+    { name: "XLV" },
+    { name: "XLF" },
+    { name: "XLI" },
+    { name: "ICLN" },
+    { name: "IYT" },
+    { name: "XLB" },
+    { name: "IEMG" },
+    { name: "IEFA" },
+    { name: "EUFN" },
+    { name: "VYM" },
+    { name: "MUB" },
+    { name: "MBB" },
+    { name: "IEF" },
+    { name: "TIP" },
+    { name: "LQD" },
+    { name: "KBWB" },
+    { name: "VNQ" },
+    { name: "GLD" },
+    { name: "SLV" },
+    { name: "FCX" },
+    { name: "GBTC" },
+    { name: "CASHX" },
   ];
 
-  
 
   const handleFundQueryChange = (event) => {
     event.persist();
@@ -51,40 +77,25 @@ const FundPicker = ( funds ) => {
       >
         <Grid container spacing={2}>
           <Grid item xs={4}>
-            <Box>
-              {/* {funds?.map((fund, idx) => (
-                <p key={idx}>{fund}</p>
-                ))
-              } */}
-              {console.log(funds, )}
-            </Box>
             <Box p={1}>
               {/* fund query */}
               <Autocomplete
-                multiple
+                id="fund-query"
+                fullWidth
+                limitTags={1}
                 sx={{
                   m: 0,
                 }}
                 options={funds}
-                getOptionLabel={(option) => option.title}
+                getOptionLabel={(option) => option.name}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     sx={{
                       m: 0,
                     }}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchTwoToneIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-                    onChange={handleFundQueryChange}
                     placeholder={"Search by fund name..."}
-                    value={fundQuery}
                     fullWidth
-                    variant="outlined"
                   />
                 )}
               />
@@ -94,23 +105,17 @@ const FundPicker = ( funds ) => {
             {/* compare query */}
             <Box p={1}>
               <Autocomplete
+                id="compare-query"
                 sx={{
                   m: 0,
                 }}
                 options={funds}
-                getOptionLabel={(option) => option.title}
+                getOptionLabel={(option) => option.name}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     sx={{
                       m: 0,
-                    }}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchTwoToneIcon />
-                        </InputAdornment>
-                      ),
                     }}
                     onChange={handleCompareQueryChange}
                     placeholder={"Compare to "}
@@ -126,24 +131,17 @@ const FundPicker = ( funds ) => {
             <Box p={1}>
               {/* benchmark query */}
               <Autocomplete
-                multiple
+                id="benchmark-query"
                 sx={{
                   m: 0,
                 }}
                 options={funds}
-                getOptionLabel={(option) => option.title}
+                getOptionLabel={(option) => option.name}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     sx={{
                       m: 0,
-                    }}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchTwoToneIcon />
-                        </InputAdornment>
-                      ),
                     }}
                     onChange={handleBenchmarkQueryChange}
                     placeholder={"Benchmark against"}
@@ -155,40 +153,18 @@ const FundPicker = ( funds ) => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Box p={1}>
-              <Autocomplete
-                multiple
-                sx={{
-                  m: 0,
-                }}
-                limitTags={2}
-                options={projectTags}
-                getOptionLabel={(option) => option.title}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    fullWidth
-                    variant="outlined"
-                    label={"Tags"}
-                    placeholder={"Select tags..."}
-                  />
-                )}
-              />
-            </Box>
-          </Grid>
         </Grid>
       </Card>
     </>
   );
 };
 
-FundPicker.propTypes = {
-  funds: PropTypes.array.isRequired,
-};
+// FundPicker.propTypes = {
+//   funds: PropTypes.array.isRequired,
+// };
 
-FundPicker.defaultProps = {
-  funds: [],
-};
+// FundPicker.defaultProps = {
+//   funds: [],
+// };
 
 export default FundPicker;
