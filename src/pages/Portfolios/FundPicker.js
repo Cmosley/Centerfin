@@ -11,9 +11,6 @@ import { useFormik } from "formik";
 
 
 function FundPicker({onChange, onSubmit, values})  {
- 
- 
-
   const funds = [
     { name: "ADISK" },
     { name: "ARKG" },
@@ -58,7 +55,6 @@ function FundPicker({onChange, onSubmit, values})  {
       console.log(values);
     },
   });
-
 
   return (
     <>

@@ -23,7 +23,7 @@ const Portfolios = SuspenseLoader(
 const dashboardsRoutes = [
   {
     path: "dashboards",
-    element: <Navigate to="clients" replace />,
+    element: <Navigate to="portfolios" replace />,
   },
   {
     path: "clients",
@@ -34,9 +34,9 @@ const dashboardsRoutes = [
     element: <Analyzer />,
   },
   {
-    path: "portfolios", 
+    path: "portfolios",
     element: <Portfolios />,
-  }
+  },
 ];
 
 export default dashboardsRoutes;
