@@ -11,12 +11,12 @@ function Portfolios() {
 
   const formik = useFormik({
     initialValues: {
-      fundQuery: "ARKG",
-      compareQuery: "QQQ",
-      benchmarkQuery: "SPY",
+      fundQuery: "",
+      compareQuery: "",
+      benchmarkQuery: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      alert(values);
     },
   });
   

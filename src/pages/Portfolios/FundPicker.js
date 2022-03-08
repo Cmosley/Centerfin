@@ -45,16 +45,16 @@ function FundPicker({onChange, onSubmit, values})  {
     { name: "CASHX" },
   ];
 
-  const formik = useFormik({
-    initialValues: {
-      fundQuery: "ARKG",
-      compareQuery: "QQQ",
-      benchmarkQuery: "SPY",
-    },
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     fundQuery: "ARKG",
+  //     compareQuery: "QQQ",
+  //     benchmarkQuery: "SPY",
+  //   },
+  //   onSubmit: (values) => {
+  //     console.log(values);
+  //   },
+  // });
 
   return (
     <>
@@ -64,7 +64,7 @@ function FundPicker({onChange, onSubmit, values})  {
           mb: 3,
         }}
       >
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={values.handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <Box p={1}>
@@ -83,7 +83,7 @@ function FundPicker({onChange, onSubmit, values})  {
                       sx={{
                         m: 0,
                       }}
-                      onChange={formik.handleChange}
+                      onChange={onChange}
                       id="fundQuery"
                       name="fundQuery"
                       value={values.fundQuery}
@@ -109,11 +109,11 @@ function FundPicker({onChange, onSubmit, values})  {
                       sx={{
                         m: 0,
                       }}
-                      onChange={formik.handleChange}
+                      onChange={onChange}
                       placeholder={"Compare to "}
                       id="compareQuery"
                       name="compareQuery"
-                      value={formik.values.compareQuery}
+                      value={values.compareQuery}
                       fullWidth
                       variant="outlined"
                     />
@@ -136,11 +136,11 @@ function FundPicker({onChange, onSubmit, values})  {
                       sx={{
                         m: 0,
                       }}
-                      onChange={formik.handleChange}
+                      onChange={onChange}
                       id="benchmarkQuery"
                       name="benchmarkQuery"
                       placeholder={"Benchmark against"}
-                      value={formik.values.benchmarkQuery}
+                      value={values.benchmarkQuery}
                       fullWidth
                       variant="outlined"
                     />
