@@ -1,13 +1,13 @@
 import { Box, CircularProgress } from "@mui/material";
-import nprogress from "nprogress/nprogress.js";
+import Nprogress from "nprogress/nprogress.js";
 import { useEffect } from "react";
 
 function Loader() {
   useEffect(() => {
-    nprogress.start();
+    Nprogress.start();
 
     return () => {
-      nprogress.done();
+      Nprogress.done();
     };
   }, []);
 
