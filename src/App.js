@@ -1,15 +1,11 @@
 import  Amplify from 'aws-amplify'
 import awsconfig from "./aws-exports";
-// import { Link } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
 import router from "./router";
-
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 import "./App.css";
-
 import { CssBaseline } from "@mui/material";
-
 import ThemeProvider from './theme/ThemeProvider'
 import Home from './pages/Home'
 // import Dashboard from './layouts/Dashboard'

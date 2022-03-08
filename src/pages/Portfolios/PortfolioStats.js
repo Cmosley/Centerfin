@@ -54,29 +54,28 @@ const TableWrapper = styled(Table)(
             width: 100%;
             content: "";
             background: ${theme.colors.alpha.white[100]};
-            border-top: 1px solid ${theme.colors.alpha.black[10]};
+            //border-top: 1px solid ${theme.colors.alpha.black[10]};
             border-bottom: 1px solid ${theme.colors.alpha.black[10]};
             pointer-events: none;
             z-index: 4;
         }
 
         &:first-of-type:before {
-            border-top-left-radius: ${theme.general.borderRadius};
-            border-bottom-left-radius: ${theme.general.borderRadius};
-            border-left: 1px solid ${theme.colors.alpha.black[10]};
+            // border-top-left-radius: ${theme.general.borderRadius};
+            // border-bottom-left-radius: ${theme.general.borderRadius};
+            //border-left: 1px solid ${theme.colors.alpha.black[10]};
         }
         
 
         &:last-child:before {
-            border-top-right-radius: ${theme.general.borderRadius};
-            border-bottom-right-radius: ${theme.general.borderRadius};
-            border-right: 1px solid ${theme.colors.alpha.black[10]};
+            // border-top-right-radius: ${theme.general.borderRadius};
+            // border-bottom-right-radius: ${theme.general.borderRadius};
+            //border-right: 1px solid ${theme.colors.alpha.black[10]};
         }
     }
 
     tbody tr:hover td::before {
         background: ${alpha(theme.colors.primary.main, 0.02)};
-        border-color: ${alpha(theme.colors.alpha.black[100], 0.25)} !important;
     }
 
   `
@@ -146,7 +145,7 @@ const TableHeadWrapper = styled(TableHead)(
           font-weight: normal;
           color: ${theme.colors.alpha.black[100]};
           font-size: ${theme.typography.pxToRem(16)};
-          padding: ${theme.spacing(2)};
+          padding: ${theme.spacing(1)};
       }
 
       .MuiTableRow-root {
@@ -155,7 +154,7 @@ const TableHeadWrapper = styled(TableHead)(
   `
 );
 
-function PortfolioStats() {
+function PortfolioStats({values}) {
   const [currentTab, setCurrentTab] = useState("performance");
 
   const theme = useTheme();
@@ -187,11 +186,11 @@ function PortfolioStats() {
             }}
             variant="h4"
           >
-            {"Portfolio Analysis"}
+            {"Fund Analysis"}
           </Typography>
-          <Typography variant="subtitle2">
+          {/* <Typography variant="subtitle2">
             {"Reports for what we sold this week"}
-          </Typography>
+          </Typography> */}
         </Box>
       </Box>
       <Divider />
@@ -214,847 +213,206 @@ function PortfolioStats() {
           display: { xs: "none", sm: "flex" },
         }}
       />
-      <Box px={3} pb={3}>
+      <Box px={2} pb={2}>
         <TableContainer>
           {currentTab === tabs[0].value && (
             <TableWrapper>
               <TableHeadWrapper>
                 <TableRow>
-                  <TableCell>{"Employee"}</TableCell>
-                  <TableCell align="left">"Income"</TableCell>
-                  <TableCell align="center">"Expenses"</TableCell>
-                  <TableCell align="center">"Status"</TableCell>
-                  <TableCell align="center">"Trends"</TableCell>
-                  <TableCell align="right">"Totals"</TableCell>
+                  <TableCell>{"Funds"}</TableCell>
+                  <TableCell align="center">
+                    {values.fundQuery || "ARKG"}
+                  </TableCell>
+                  <TableCell align="center">
+                    {values.compareQuery || "FRA"}
+                  </TableCell>
+                  <TableCell align="center">
+                    {values.benchmarkQuery || "SPY"}
+                  </TableCell>
                 </TableRow>
               </TableHeadWrapper>
               <TableBody>
                 <TableRow>
                   <TableCell>
                     <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Inez Conley
-                      </Link>
                       <Typography variant="subtitle1" noWrap>
-                        Project Manager
+                        Name
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         $754
                       </Typography>
                     </div>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <LabelError>{"Overdue"}</LabelError>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[45, 56, 24, 56, 54, 38, 47, 38, 56, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$3,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                 </TableRow>
                 <TableRowDivider />
-                <TableRow hover>
-                  <TableCell>
-                    <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Isaiah Ruiz
-                      </Link>
-                      <Typography variant="subtitle1" noWrap>
-                        Senior Web Developer
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        $654
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="warning">-$463</Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <LabelWarning>{"Pending"}</LabelWarning>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 34, 65, 77, 89, 54, 35, 87, 65, 94, 59, 54]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
-                      </Typography>
-                    </div>
-                  </TableCell>
-                </TableRow>
-                <TableRowDivider />
-                <TableRow hover>
-                  <TableCell>
-                    <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Beck Simpson
-                      </Link>
-                      <Typography variant="subtitle1" noWrap>
-                        Senior Consultant
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        $5,468
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="success">+$685</Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <LabelSuccess>{"Done"}</LabelSuccess>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 45, 37, 97, 56, 37, 47, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                        >
-                          <Text color="error">$23,654</Text>
-                        </Typography>
-                        <Text flex color="error">
-                          <ArrowDownwardTwoToneIcon />
-                        </Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </TableWrapper>
-          )}
-          {currentTab === tabs[1].value && (
-            <TableWrapper>
-              <TableHeadWrapper>
-                <TableRow>
-                  <TableCell>{"Employee"}</TableCell>
-                  <TableCell align="left">"Income"</TableCell>
-                  <TableCell align="center">"Expenses"</TableCell>
-                  <TableCell align="center">"Status"</TableCell>
-                  <TableCell align="center">"Trends"</TableCell>
-                  <TableCell align="right">"Totals"</TableCell>
-                </TableRow>
-              </TableHeadWrapper>
-              <TableBody>
                 <TableRow>
                   <TableCell>
                     <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Inez Conley
-                      </Link>
                       <Typography variant="subtitle1" noWrap>
-                        Project Manager
+                        Asset Class
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         $754
                       </Typography>
                     </div>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <LabelError>{"Overdue"}</LabelError>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[45, 56, 24, 56, 54, 38, 47, 38, 56, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                 </TableRow>
                 <TableRowDivider />
-                <TableRow hover>
-                  <TableCell>
-                    <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Isaiah Ruiz
-                      </Link>
-                      <Typography variant="subtitle1" noWrap>
-                        Senior Web Developer
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        $654
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="warning">-$463</Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <LabelWarning>{"Pending"}</LabelWarning>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 34, 65, 77, 89, 54, 35, 87, 65, 94, 59, 54]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
-                      </Typography>
-                    </div>
-                  </TableCell>
-                </TableRow>
-                <TableRowDivider />
-                <TableRow hover>
-                  <TableCell>
-                    <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Beck Simpson
-                      </Link>
-                      <Typography variant="subtitle1" noWrap>
-                        Senior Consultant
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        $5,468
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="success">+$685</Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <LabelSuccess>{"Done"}</LabelSuccess>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 45, 37, 97, 56, 37, 47, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                        >
-                          <Text color="error">$23,654</Text>
-                        </Typography>
-                        <Text flex color="error">
-                          <ArrowDownwardTwoToneIcon />
-                        </Text>
-                      </Typography>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </TableWrapper>
-          )}
-          {currentTab === tabs[2].value && (
-            <TableWrapper>
-              <TableHeadWrapper>
-                <TableRow>
-                  <TableCell>{"Employee"}</TableCell>
-                  <TableCell align="left">"Income"</TableCell>
-                  <TableCell align="center">"Expenses"</TableCell>
-                  <TableCell align="center">"Status"</TableCell>
-                  <TableCell align="center">"Trends"</TableCell>
-                  <TableCell align="right">"Totals"</TableCell>
-                </TableRow>
-              </TableHeadWrapper>
-              <TableBody>
                 <TableRow>
                   <TableCell>
                     <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Inez Conley
-                      </Link>
                       <Typography variant="subtitle1" noWrap>
-                        Project Manager
+                        Category
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         $754
                       </Typography>
                     </div>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
+                      <Typography variant="h6" noWrap>
                         <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <LabelError>{"Overdue"}</LabelError>
-                    </div>
-                  </TableCell>
-                  <TableCell align="center">
-                    <div>
-                      <Sparklines
-                        margin={6}
-                        data={[45, 56, 24, 56, 54, 38, 47, 38, 56, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                 </TableRow>
                 <TableRowDivider />
-                <TableRow hover>
+                <TableRow>
                   <TableCell>
                     <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Isaiah Ruiz
-                      </Link>
                       <Typography variant="subtitle1" noWrap>
-                        Senior Web Developer
+                        Fund Benchmark
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
-                        $654
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="warning">-$463</Text>
+                      <Typography variant="h6" noWrap>
+                        $754
                       </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <LabelWarning>{"Pending"}</LabelWarning>
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
+                      </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 34, 65, 77, 89, 54, 35, 87, 65, 94, 59, 54]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">
-                    <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                          color="text.primary"
-                        >
-                          $68,492
-                        </Typography>
-                        <ArrowUpwardTwoToneIcon
-                          sx={{
-                            opacity: 0.6,
-                          }}
-                        />
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>
                 </TableRow>
                 <TableRowDivider />
-                <TableRow hover>
+                <TableRow>
                   <TableCell>
                     <Box>
-                      <Link href="#" variant="h4" noWrap>
-                        Beck Simpson
-                      </Link>
                       <Typography variant="subtitle1" noWrap>
-                        Senior Consultant
+                        Assets
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography variant="h4" noWrap>
-                        $5,468
-                      </Typography>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div>
-                      <Typography variant="h4" noWrap>
-                        <Text color="success">+$685</Text>
+                      <Typography variant="h6" noWrap>
+                        $754
                       </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <LabelSuccess>{"Done"}</LabelSuccess>
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
+                      </Typography>
                     </div>
                   </TableCell>
                   <TableCell align="center">
                     <div>
-                      <Sparklines
-                        margin={6}
-                        data={[65, 45, 37, 97, 56, 37, 47, 24, 38]}
-                      >
-                        <SparklinesLine
-                          style={{
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                            fill: "none",
-                          }}
-                        />
-                        <SparklinesSpots
-                          size={4}
-                          style={{
-                            fill: theme.colors.alpha.white[100],
-                            stroke: theme.colors.primary.main,
-                            strokeWidth: 3,
-                          }}
-                        />
-                        <SparklinesReferenceLine
-                          style={{
-                            stroke: theme.colors.error.main,
-                          }}
-                          type="mean"
-                        />
-                      </Sparklines>
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
+                      </Typography>
                     </div>
                   </TableCell>
-                  <TableCell align="right">
+                </TableRow>
+                <TableRowDivider />
+                <TableRow>
+                  <TableCell>
+                    <Box>
+                      <Typography variant="subtitle1" noWrap>
+                        Equity Holdings
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell align="center">
                     <div>
-                      <Typography
-                        sx={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                          alignItems: "center",
-                        }}
-                        color="text.secondary"
-                      >
-                        <Typography
-                          sx={{
-                            pr: 0.5,
-                          }}
-                          component="span"
-                          variant="h4"
-                        >
-                          <Text color="error">$23,654</Text>
-                        </Typography>
-                        <Text flex color="error">
-                          <ArrowDownwardTwoToneIcon />
-                        </Text>
+                      <Typography variant="h6" noWrap>
+                        $754
+                      </Typography>
+                    </div>
+                  </TableCell>
+                  <TableCell align="center">
+                    <div>
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
+                      </Typography>
+                    </div>
+                  </TableCell>
+                  <TableCell align="center">
+                    <div>
+                      <Typography variant="h6" noWrap>
+                        <Text color="error">-$2,584</Text>
                       </Typography>
                     </div>
                   </TableCell>

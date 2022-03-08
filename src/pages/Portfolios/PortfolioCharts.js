@@ -235,7 +235,7 @@ function PortfolioCharts() {
             </Menu>
           </>
         }
-        title="Asset Vitals"
+        title="Fund Vitals"
       />
       <Divider />
       <TabsContainerWrapper>

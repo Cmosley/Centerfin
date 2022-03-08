@@ -11,12 +11,12 @@ function Portfolios() {
 
   const formik = useFormik({
     initialValues: {
-      fundQuery: "ARKG",
-      compareQuery: "QQQ",
-      benchmarkQuery: "SPY",
+      fundQuery: "",
+      compareQuery: "",
+      benchmarkQuery: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      alert(values);
     },
   });
   
@@ -42,14 +42,16 @@ function Portfolios() {
             spacing={1}
           >
             <Grid item xs={12}>
-              <FundPicker 
-                values={formik.values} 
-                onSubmit={formik.onSubmit} 
-                onChange={formik.onChange} 
+              <FundPicker
+                values={formik.values}
+                onSubmit={formik.onSubmit}
+                onChange={formik.onChange}
               />
             </Grid>
             <Grid item xs={12}>
-              <PortfolioStats />
+              <PortfolioStats 
+                values={formik.values} 
+              />
             </Grid>
             <Grid item xs={12}>
               <PortfolioCharts />

@@ -990,6 +990,7 @@ export const CenterfinTheme = createTheme({
         root: {
           borderBottomColor: colors.alpha.black[10],
           fontSize: 14,
+          padding: 2,
         },
         head: {
           textTransform: "uppercase",

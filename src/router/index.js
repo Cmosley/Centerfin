@@ -7,7 +7,7 @@ import dashboardsRoutes from "./dashboard";
 const router = [
   {
     path: "/",
-    element: <Home />,
+    element: <Dashboard />,
   },
   {
     path: 'dashboard',
