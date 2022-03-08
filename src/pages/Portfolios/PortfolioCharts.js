@@ -78,7 +78,7 @@ function PortfolioCharts() {
   const [openPeriod, setOpenMenuPeriod] = useState(false);
   const [period, setPeriod] = useState("Select period");
 
-  const [currentTab, setCurrentTab] = useState("referral");
+  const [currentTab, setCurrentTab] = useState("vitals");
 
   const tabs = [
     { value: "vitals", label: "Vitals" },

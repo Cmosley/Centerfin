@@ -6,6 +6,41 @@ import PortfolioCharts from "./PortfolioCharts"
 import PortfolioStats from "./PortfolioStats"
 
 function Portfolios() {
+  const funds = [
+    "ADISK",
+    "ARKG",
+    "DSU",
+    "FRA",
+    "BHK",
+    "QQQ",
+    "SMH",
+    "IGV",
+    "XBI",
+    "XLV",
+    "XLF",
+    "XLI",
+    "ICLN",
+    "IYT",
+    "XLB",
+    "IEMG",
+    "IEFA",
+    "EUFN",
+    "VYM",
+    "MUB",
+    "MBB",
+    "IEF",
+    "TIP",
+    "LQD",
+    "KBWB",
+    "VNQ",
+    "GLD",
+    "SLV",
+    "FCX",
+    "GBTC",
+    "CASHX",
+  ];
+
+
   return (
     <>
       <PageHeader />
@@ -28,7 +63,7 @@ function Portfolios() {
             spacing={1}
           >
             <Grid item xs={12}>
-              <FundPicker/>
+              <FundPicker funds={funds}/>
             </Grid>
             <Grid item xs={12}>
               <PortfolioStats />
