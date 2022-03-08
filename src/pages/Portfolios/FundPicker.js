@@ -1,20 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import PropTypes from "prop-types";
 import {
   Autocomplete,
   Box,
+  Button,
   Card,
   Grid,
   InputAdornment,
   TextField,
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import { useFormik } from "formik";
 
 
 function FundPicker()  {
-  const [fundQuery, setFundQuery] = useState([]);
-  const [compareQuery, setCompareQuery] = useState([]);
-  const [benchmarkQuery, setBenchmarkQuery] = useState([]);
+  // const [fundQuery, setFundQuery] = useState("");
+  // const [compareQuery, setCompareQuery] = useState("");
+  // const [benchmarkQuery, setBenchmarkQuery] = useState("");
+ 
 
   const funds = [
     { name: "ADISK" },
@@ -50,21 +53,16 @@ function FundPicker()  {
     { name: "CASHX" },
   ];
 
-
-  const handleFundQueryChange = (event) => {
-    event.persist();
-    setFundQuery(event.target.value);
-  };
-
-  const handleCompareQueryChange = (event) => {
-    event.persist();
-    setCompareQuery(event.target.value);
-  };
-
-  const handleBenchmarkQueryChange = (event) => {
-    event.persist();
-    setBenchmarkQuery(event.target.value);
-  };
+  const formik = useFormik({
+    initialValues: {
+      fundQuery: "ARKG",
+      compareQuery: "QQQ",
+      benchmarkQuery: "SPY",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
 
   return (
@@ -75,96 +73,102 @@ function FundPicker()  {
           mb: 3,
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <Box p={1}>
-              {/* fund query */}
-              <Autocomplete
-                id="fund-query"
-                fullWidth
-                limitTags={1}
-                sx={{
-                  m: 0,
-                }}
-                options={funds}
-                getOptionLabel={(option) => option.name}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    sx={{
-                      m: 0,
-                    }}
-                    placeholder={"Search by fund name..."}
-                    fullWidth
-                  />
-                )}
-              />
-            </Box>
+        <form onSubmit={formik.handleSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={3}>
+              <Box p={1}>
+                {/* fund query */}
+                <Autocomplete
+                  fullWidth
+                  limitTags={1}
+                  sx={{
+                    m: 0,
+                  }}
+                  options={funds}
+                  getOptionLabel={(option) => option.name}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      sx={{
+                        m: 0,
+                      }}
+                      onChange={formik.handleChange}
+                      id="fundQuery"
+                      name="fundQuery"
+                      value={formik.values.fundQuery}
+                      placeholder={"Search by fund name..."}
+                      fullWidth
+                    />
+                  )}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={3}>
+              {/* compare query */}
+              <Box p={1}>
+                <Autocomplete
+                  sx={{
+                    m: 0,
+                  }}
+                  options={funds}
+                  getOptionLabel={(option) => option.name}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      sx={{
+                        m: 0,
+                      }}
+                      onChange={formik.handleChange}
+                      placeholder={"Compare to "}
+                      id="compareQuery"
+                      name="compareQuery"
+                      value={formik.values.compareQuery}
+                      fullWidth
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={3}>
+              <Box p={1}>
+                {/* benchmark query */}
+                <Autocomplete
+                  sx={{
+                    m: 0,
+                  }}
+                  options={funds}
+                  getOptionLabel={(option) => option.name}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      sx={{
+                        m: 0,
+                      }}
+                      onChange={formik.handleChange}
+                      id="benchmarkQuery"
+                      name="benchmarkQuery"
+                      placeholder={"Benchmark against"}
+                      value={formik.values.benchmarkQuery}
+                      fullWidth
+                      variant="outlined"
+                    />
+                  )}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={3}>
+              <Box mt={0.5} p={1}>
+                <Button type="submit" variant="contained">
+                  Search
+                </Button>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            {/* compare query */}
-            <Box p={1}>
-              <Autocomplete
-                id="compare-query"
-                sx={{
-                  m: 0,
-                }}
-                options={funds}
-                getOptionLabel={(option) => option.name}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    sx={{
-                      m: 0,
-                    }}
-                    onChange={handleCompareQueryChange}
-                    placeholder={"Compare to "}
-                    value={compareQuery}
-                    fullWidth
-                    variant="outlined"
-                  />
-                )}
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={4}>
-            <Box p={1}>
-              {/* benchmark query */}
-              <Autocomplete
-                id="benchmark-query"
-                sx={{
-                  m: 0,
-                }}
-                options={funds}
-                getOptionLabel={(option) => option.name}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    sx={{
-                      m: 0,
-                    }}
-                    onChange={handleBenchmarkQueryChange}
-                    placeholder={"Benchmark against"}
-                    value={benchmarkQuery}
-                    fullWidth
-                    variant="outlined"
-                  />
-                )}
-              />
-            </Box>
-          </Grid>
-        </Grid>
+        </form>
       </Card>
     </>
   );
-};
-
-// FundPicker.propTypes = {
-//   funds: PropTypes.array.isRequired,
-// };
-
-// FundPicker.defaultProps = {
-//   funds: [],
-// };
+}
 
 export default FundPicker;
