@@ -1,22 +1,17 @@
-import { useState, useEffect } from "react";
-// import PropTypes from "prop-types";
 import {
   Autocomplete,
   Box,
   Button,
   Card,
   Grid,
-  InputAdornment,
   TextField,
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { useFormik } from "formik";
 
 
-function FundPicker()  {
-  // const [fundQuery, setFundQuery] = useState("");
-  // const [compareQuery, setCompareQuery] = useState("");
-  // const [benchmarkQuery, setBenchmarkQuery] = useState("");
+function FundPicker({onChange, onSubmit, values})  {
+ 
  
 
   const funds = [
@@ -95,7 +90,7 @@ function FundPicker()  {
                       onChange={formik.handleChange}
                       id="fundQuery"
                       name="fundQuery"
-                      value={formik.values.fundQuery}
+                      value={values.fundQuery}
                       placeholder={"Search by fund name..."}
                       fullWidth
                     />
