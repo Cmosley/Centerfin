@@ -1,13 +1,42 @@
 // import Footer from "src/components/Footer";
 import { Grid } from "@mui/material";
 import { useFormik } from "formik";
-
+import { useEffect, useState } from "react";
 import FundPicker from "./FundPicker";
 import PageHeader from "./PageHeader";
 import PortfolioCharts from "./PortfolioCharts";
 import PortfolioStats from "./PortfolioStats";
+// import yahooFinance from "yahoo-finance2";
+
+const alpha_key = process.env.REACT_APP_ALPHA_API_KEY;
+const alpha = require("alphavantage")({ key: { alpha_key } });
+
+
+
 
 function Portfolios() {
+  const [result, setResult] = useState([])
+  const [loading, setLoading] = useState(false);
+
+  let tickers = "arkg";
+  
+
+  useEffect(() => {
+    setLoading(true)
+    const searchTicker = async() => {
+    const response = await alpha.data.daily(tickers);
+      if (setLoading) {
+        setResult(response);
+      }
+    }
+    
+    searchTicker()
+      .catch(console.error);
+
+    return setLoading(false)
+  },[])
+
+  console.log(result, 'result')
 
   const formik = useFormik({
     initialValues: {
