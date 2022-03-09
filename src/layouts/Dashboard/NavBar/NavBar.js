@@ -19,7 +19,6 @@ import Navigation from "./Navigation"
 
 const NavBarWrapper = styled(Card)(
   ({ theme }) => `
-    
     background: ${alpha(darken(theme.colors.primary.dark, 0.2), 0.95)};
     backdrop-filter: blur(5px);
     margin: ${theme.spacing(0, 0, 5)};
@@ -55,10 +54,9 @@ const DividerWrapper = styled(Divider)(
 `
 );
   
-  
+
 function NavBar() {
   const theme = useTheme();
-
 
   return (
     <NavBarWrapper>

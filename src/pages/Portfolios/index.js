@@ -16,27 +16,29 @@ const alpha = require("alphavantage")({ key: { alpha_key } });
 
 function Portfolios() {
   const [result, setResult] = useState([])
+  const [symbols, setSymbols] = useState([])
   const [loading, setLoading] = useState(false);
 
-  let tickers = "arkg";
   
 
-  useEffect(() => {
-    setLoading(true)
-    const searchTicker = async() => {
-    const response = await alpha.data.daily(tickers);
-      if (setLoading) {
-        setResult(response);
-      }
-    }
+//  let symbols = [{fund: 'arkg', compare: 'qqq', benchmark: 'spy'}]
+   
+
+  // useEffect(() => {
+  //   searchTickers(result)
+  // },[])
+
+  // const searchTickers = () => {
+  //   symbols.forEach(async(element) => {
+  //     const response = await alpha.data.daily(element);
+  //       if (setLoading) {
+  //         setResult(response[element]);
+  //       }
+  //   })
+  // }
     
-    searchTicker()
-      .catch(console.error);
+  // console.log(result)
 
-    return setLoading(false)
-  },[])
-
-  console.log(result, 'result')
 
   const formik = useFormik({
     initialValues: {
@@ -44,10 +46,12 @@ function Portfolios() {
       compareQuery: "",
       benchmarkQuery: "",
     },
-    onSubmit: (values) => {
-      alert(values);
+    onSubmit: (e, values) => {
+      e.preventDefault()
+      setSymbols(values)
     },
   });
+  
   
   return (
     <>
@@ -73,8 +77,8 @@ function Portfolios() {
             <Grid item xs={12}>
               <FundPicker
                 values={formik.values}
-                onSubmit={formik.onSubmit}
-                onChange={formik.onChange}
+                handleSubmit={formik.handleSubmit}
+                handleChange={formik.handleChange}
               />
             </Grid>
             <Grid item xs={12}>

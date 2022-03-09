@@ -18,7 +18,6 @@ const MainWrapper = styled(Box)(
     top: 0;
     height: 100%;
   }
-
   .Mui-FixedWrapper .MuiPaper-root {
     top: 0;
     left: 0;
